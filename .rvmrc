@@ -1,0 +1,2 @@
+rvm use --create ruby-1.9.3-head@notify_update
+export rvm_gem_options="--no-rdoc --no-ri"
