@@ -4,6 +4,7 @@ class NotifyDocomoDeviceUpdate
   require 'nokogiri'
   require 'open-uri'
   require 'time'
+  require './actionmailer'
 
   DEFAULT_URL = "http://www.nttdocomo.co.jp/support/utilization/product_update/list/index.html?s=date" 
   LAST_CHECK_DATE = Time.now.strftime("%F")
@@ -24,6 +25,7 @@ class NotifyDocomoDeviceUpdate
       end
     end
     puts result
+    ::SampleMailer.first_example('There is a body.').deliver
   end
 
   def convert_str_to_date(str)

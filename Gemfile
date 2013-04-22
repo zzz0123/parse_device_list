@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'nokogiri'
+gem 'actionmailer'
 
 group :development do
   gem 'pry'
